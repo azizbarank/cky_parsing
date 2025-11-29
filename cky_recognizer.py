@@ -1,6 +1,7 @@
 """CKY algorithm for sentence recognition with backpointers."""
 
 from nltk.grammar import CFG
+from nltk.tree import Tree
 
 
 def cky_recognize(grammar: CFG, sentence: list[str]) -> bool:
@@ -61,3 +62,21 @@ def cky_recognize(grammar: CFG, sentence: list[str]) -> bool:
                                 table[i][j][lhs].append(("binary", production, k, b, c))
 
     return grammar.start() in table[0][n - 1]
+
+
+def extract_trees(table, sentence, i, j, nonterminal):
+    """Extract parse trees from backpointers."""
+    if nonterminal not in table[i][j]:
+        return []
+
+    trees = []
+    for backpointer in table[i][j][nonterminal]:
+        bp_type = backpointer[0]
+
+        if bp_type == "terminal":
+            production = backpointer[1]
+            word = sentence[i]
+            tree = Tree(str(production.lhs()), [word])
+            trees.append(tree)
+
+    return trees
