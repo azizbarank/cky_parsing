@@ -4,14 +4,11 @@ from nltk.grammar import CFG
 from nltk.tree import Tree
 
 
-def cky_recognize(grammar: CFG, sentence: list[str]) -> bool:
-    """Check if a sentence is in the language of the CFG using CKY.
-
-    This version stores backpointers for parse tree extraction.
-    """
+def cky_parse(grammar: CFG, sentence: list[str]):
+    """Parse a sentence and return the CKY table with backpointers."""
     n = len(sentence)
     if n == 0:
-        return False
+        return None
 
     terminal_rules = {}
     binary_rules = {}
@@ -31,10 +28,8 @@ def cky_recognize(grammar: CFG, sentence: list[str]) -> bool:
                 binary_rules[pair] = []
             binary_rules[pair].append(production)
 
-    # Table now stores dict: {Nonterminal: [list of backpointers]}
     table = [[{} for _ in range(n)] for _ in range(n)]
 
-    # Initialize with terminal rules
     for i in range(n):
         word = sentence[i]
         if word in terminal_rules:
@@ -42,10 +37,8 @@ def cky_recognize(grammar: CFG, sentence: list[str]) -> bool:
                 lhs = production.lhs()
                 if lhs not in table[i][i]:
                     table[i][i][lhs] = []
-                # Backpointer for terminal: (production, None for terminal)
                 table[i][i][lhs].append(("terminal", production))
 
-    # Fill table with binary rules
     for length in range(2, n + 1):
         for i in range(n - length + 1):
             j = i + length - 1
@@ -58,9 +51,17 @@ def cky_recognize(grammar: CFG, sentence: list[str]) -> bool:
                                 lhs = production.lhs()
                                 if lhs not in table[i][j]:
                                     table[i][j][lhs] = []
-                                # Backpointer: (type, production, split_point, left_NT, right_NT)
                                 table[i][j][lhs].append(("binary", production, k, b, c))
 
+    return table
+
+
+def cky_recognize(grammar: CFG, sentence: list[str]) -> bool:
+    """Check if a sentence is in the language of the CFG using CKY."""
+    table = cky_parse(grammar, sentence)
+    if table is None:
+        return False
+    n = len(sentence)
     return grammar.start() in table[0][n - 1]
 
 
@@ -78,5 +79,29 @@ def extract_trees(table, sentence, i, j, nonterminal):
             word = sentence[i]
             tree = Tree(str(production.lhs()), [word])
             trees.append(tree)
+        elif bp_type == "binary":
+            production = backpointer[1]
+            k = backpointer[2]
+            left_nt = backpointer[3]
+            right_nt = backpointer[4]
+
+            left_trees = extract_trees(table, sentence, i, k, left_nt)
+            right_trees = extract_trees(table, sentence, k + 1, j, right_nt)
+
+            for left_tree in left_trees:
+                for right_tree in right_trees:
+                    tree = Tree(str(production.lhs()), [left_tree, right_tree])
+                    trees.append(tree)
 
     return trees
+
+
+def parse(grammar: CFG, sentence: list[str]) -> list[Tree]:
+    """Parse a sentence and return all parse trees."""
+    table = cky_parse(grammar, sentence)
+    if table is None:
+        return []
+    n = len(sentence)
+    if grammar.start() not in table[0][n - 1]:
+        return []
+    return extract_trees(table, sentence, 0, n - 1, grammar.start())
