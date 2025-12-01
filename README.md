@@ -12,10 +12,21 @@ Implementation of the Cocke-Kasami-Younger (CKY) parsing algorithm for the ATIS 
 - `parse_results.txt` - Tab-separated output (sentence\t#parses)
 - `parse_visualizations.txt` - Parse trees for sentences with 2-5 parses
 
+## Setup
+
+Install dependencies using uv:
+```bash
+uv sync
+```
+
+Or using pip:
+```bash
+pip install nltk
+```
+
 ## How to Run
 
 ```bash
-source .venv/bin/activate
 python3 main.py
 python3 compare_nltk.py
 python3 test_recognizer.py
