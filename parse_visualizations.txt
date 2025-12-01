@@ -1,0 +1,548 @@
+
+======================================================================
+Sentence: prices .
+Number of parses: 2
+======================================================================
+
+Parse 1:
+(SIGMA (NOUN_NNS prices) (pt_char_per .))
+
+Parse 2:
+(SIGMA (VERB_VBZ prices) (pt_char_per .))
+
+
+======================================================================
+Sentence: show availability .
+Number of parses: 3
+======================================================================
+
+Parse 1:
+(SIGMA (NOUN_NN show) (JWB (AVPNP_NN availability) (pt_char_per .)))
+
+Parse 2:
+(SIGMA (VERB_VB show) (JKA (NP_NN availability) (pt_char_per .)))
+
+Parse 3:
+(SIGMA (NP_NN show) (JXI (NOUN_NN availability) (pt_char_per .)))
+
+
+======================================================================
+Sentence: show the flights .
+Number of parses: 2
+======================================================================
+
+Parse 1:
+(SIGMA
+  (VERB_VB show)
+  (JKB (NP_NNS (ADJ_AT the) (NOUN_NNS flights)) (pt_char_per .)))
+
+Parse 2:
+(SIGMA
+  (VERB_VB show)
+  (JKB (NP_NNS (AVP_RB the) (NOUN_NNS flights)) (pt_char_per .)))
+
+
+======================================================================
+Sentence: milwaukee to detroit .
+Number of parses: 2
+======================================================================
+
+Parse 1:
+(SIGMA
+  (NP_NP (NOUN_NP milwaukee) (PREP_IN to))
+  (KFD (NOUN_NP detroit) (pt_char_per .)))
+
+Parse 2:
+(SIGMA
+  (NOUN_NP milwaukee)
+  (KEX (PP_NP (PREP_IN to) (NOUN_NP detroit)) (pt_char_per .)))
+
+
+======================================================================
+Sentence: indianapolis to seattle .
+Number of parses: 2
+======================================================================
+
+Parse 1:
+(SIGMA
+  (NP_NP (NOUN_NP indianapolis) (PREP_IN to))
+  (KFD (NOUN_NP seattle) (pt_char_per .)))
+
+Parse 2:
+(SIGMA
+  (NOUN_NP indianapolis)
+  (KEX (PP_NP (PREP_IN to) (NOUN_NP seattle)) (pt_char_per .)))
+
+
+======================================================================
+Sentence: list saturday flights .
+Number of parses: 5
+======================================================================
+
+Parse 1:
+(SIGMA
+  (VERB_VB list)
+  (GXA (NP_NP saturday) (GXB (NP_NNS flights) (pt_char_per .))))
+
+Parse 2:
+(SIGMA
+  (NOUN_NN list)
+  (JWS
+    (RELCL_VBZ (NP_NP saturday) (VERB_VBZ flights))
+    (pt_char_per .)))
+
+Parse 3:
+(SIGMA
+  (VERB_VB list)
+  (JKB (NP_NNS (NP_NP saturday) (NOUN_NNS flights)) (pt_char_per .)))
+
+Parse 4:
+(SIGMA
+  (NP_NP (NP_NN list) (NOUN_NP saturday))
+  (KCJ (NOUN_NNS flights) (pt_char_per .)))
+
+Parse 5:
+(SIGMA
+  (NP_NN (NOUN_NN list) (NAPPOS_NP saturday))
+  (KCD (NOUN_NNS flights) (pt_char_per .)))
+
+
+======================================================================
+Sentence: what is the fare .
+Number of parses: 2
+======================================================================
+
+Parse 1:
+(SIGMA
+  (NP_DT what)
+  (GDO
+    (VERB_BEZ is)
+    (GDP (NP_NN (ADJ_AT the) (NOUN_NN fare)) (pt_char_per .))))
+
+Parse 2:
+(SIGMA
+  (NP_DT what)
+  (KGC
+    (VERB_BEZ is)
+    (NP_NN (ADJ_AT the) (JUO (NOUN_NN fare) (pt_char_per .)))))
+
+
+======================================================================
+Sentence: list flights from cleveland .
+Number of parses: 5
+======================================================================
+
+Parse 1:
+(SIGMA
+  (NP_NN list)
+  (HXS
+    (NOUN_NNS flights)
+    (HXT (PP_NP (PREP_IN from) (NOUN_NP cleveland)) (pt_char_per .))))
+
+Parse 2:
+(SIGMA
+  (VERB_VB list)
+  (GWQ
+    (NP_NNS flights)
+    (GWR (PP_NP (PREP_IN from) (NOUN_NP cleveland)) (pt_char_per .))))
+
+Parse 3:
+(SIGMA
+  (VERB_VB list)
+  (JKB
+    (NP_NNS
+      (NOUN_NNS flights)
+      (PP_NP (PREP_IN from) (NOUN_NP cleveland)))
+    (pt_char_per .)))
+
+Parse 4:
+(SIGMA
+  (VERB_VB list)
+  (GVY
+    (NP_NNS (NOUN_NNS flights) (PREP_IN from))
+    (GVZ (AVPNP_NP cleveland) (pt_char_per .))))
+
+Parse 5:
+(SIGMA
+  (NP_NN list)
+  (GRY
+    (VERB_VBZ flights)
+    (GRZ (PP_NP (PREP_IN from) (NOUN_NP cleveland)) (pt_char_per .))))
+
+
+======================================================================
+Sentence: what are the costs .
+Number of parses: 4
+======================================================================
+
+Parse 1:
+(SIGMA
+  (NP_DT what)
+  (GAE
+    (pt_verb_ber are)
+    (GAF (NP_NNS (AVP_RB the) (NOUN_NNS costs)) (pt_char_per .))))
+
+Parse 2:
+(SIGMA
+  (NP_DT what)
+  (GAE
+    (pt_verb_ber are)
+    (GAF (NP_NNS (ADJ_AT the) (NOUN_NNS costs)) (pt_char_per .))))
+
+Parse 3:
+(SIGMA
+  (NP_DT what)
+  (KFW
+    (pt_verb_ber are)
+    (NP_NNS (ADJ_AT the) (JZK (NOUN_NNS costs) (pt_char_per .)))))
+
+Parse 4:
+(SIGMA
+  (NP_DT what)
+  (KFW
+    (pt_verb_ber are)
+    (NP_NNS (AVP_RB the) (KAT (NOUN_NNS costs) (pt_char_per .)))))
+
+
+======================================================================
+Sentence: what flights leave boston to pittsburgh .
+Number of parses: 3
+======================================================================
+
+Parse 1:
+(SIGMA
+  (NP_NNS (ADJ_WPS what) (NOUN_NNS flights))
+  (GMA
+    (VERB_VB leave)
+    (GMB
+      (NP_NP
+        (NOUN_NP boston)
+        (PP_NP (PREP_IN to) (NOUN_NP pittsburgh)))
+      (pt_char_per .))))
+
+Parse 2:
+(SIGMA
+  (NP_NNS (ADJ_WPS what) (NOUN_NNS flights))
+  (DJP
+    (VERB_VB leave)
+    (DJQ
+      (NP_NP boston)
+      (DJR (PP_NP (PREP_IN to) (NOUN_NP pittsburgh)) (pt_char_per .)))))
+
+Parse 3:
+(SIGMA
+  (NP_NNS (ADJ_WPS what) (NOUN_NNS flights))
+  (GMA
+    (VERB_VB leave)
+    (GMB
+      (NP_NP
+        (NP_NP (NOUN_NP boston) (PREP_IN to))
+        (NOUN_NP pittsburgh))
+      (pt_char_per .))))
+
+
+======================================================================
+Sentence: what flights leave las vegas to oakland .
+Number of parses: 3
+======================================================================
+
+Parse 1:
+(SIGMA
+  (NP_NNS (ADJ_WPS what) (NOUN_NNS flights))
+  (GMA
+    (VERB_VB leave)
+    (GMB
+      (NP_NP
+        (NOUN_NP (las las) (vegas vegas))
+        (PP_NP (PREP_IN to) (NOUN_NP oakland)))
+      (pt_char_per .))))
+
+Parse 2:
+(SIGMA
+  (NP_NNS (ADJ_WPS what) (NOUN_NNS flights))
+  (DJP
+    (VERB_VB leave)
+    (DJQ
+      (NP_NP (las las) (vegas vegas))
+      (DJR (PP_NP (PREP_IN to) (NOUN_NP oakland)) (pt_char_per .)))))
+
+Parse 3:
+(SIGMA
+  (NP_NNS (ADJ_WPS what) (NOUN_NNS flights))
+  (GMA
+    (VERB_VB leave)
+    (GMB
+      (NP_NP
+        (NP_NP (NOUN_NP (las las) (vegas vegas)) (PREP_IN to))
+        (NOUN_NP oakland))
+      (pt_char_per .))))
+
+
+======================================================================
+Sentence: what is the cheapest ticket from memphis to miami .
+Number of parses: 5
+======================================================================
+
+Parse 1:
+(SIGMA
+  (NP_DT what)
+  (CUM
+    (VERB_BEZ is)
+    (CUN
+      (NP_NN (ADJ_AT the) (JTT (AJP_JJT cheapest) (NOUN_NN ticket)))
+      (CUO
+        (PP_NPS
+          (PREP_IN from)
+          (KMH
+            (NP_NP (NOUN_NP memphis) (PREP_IN to))
+            (NOUN_NPS miami)))
+        (pt_char_per .)))))
+
+Parse 2:
+(SIGMA
+  (NP_DT what)
+  (GDS
+    (VERB_BEZ is)
+    (GDT
+      (NP_NP
+        (NP_NN
+          (ADJ_AT the)
+          (HIG
+            (AJP_JJT cheapest)
+            (HIH (NOUN_NN ticket) (PREP_IN from))))
+        (KEZ
+          (NOUN_NP memphis)
+          (PP_NPS (PREP_IN to) (NOUN_NPS miami))))
+      (pt_char_per .))))
+
+Parse 3:
+(SIGMA
+  (NP_DT what)
+  (CUJ
+    (VERB_BEZ is)
+    (CUK
+      (NP_NN (ADJ_AT the) (JTT (AJP_JJT cheapest) (NOUN_NN ticket)))
+      (CUL
+        (PP_NP
+          (PREP_IN from)
+          (KLK
+            (NOUN_NP memphis)
+            (PP_NPS (PREP_IN to) (NOUN_NPS miami))))
+        (pt_char_per .)))))
+
+Parse 4:
+(SIGMA
+  (NP_DT what)
+  (CUM
+    (VERB_BEZ is)
+    (CUN
+      (NP_NN
+        (ADJ_AT the)
+        (HIE
+          (AJP_JJT cheapest)
+          (HIF
+            (NOUN_NN ticket)
+            (PP_NP (PREP_IN from) (NOUN_NP memphis)))))
+      (CUO (PP_NPS (PREP_IN to) (NOUN_NPS miami)) (pt_char_per .)))))
+
+Parse 5:
+(SIGMA
+  (NP_DT what)
+  (GDO
+    (VERB_BEZ is)
+    (GDP
+      (NP_NN
+        (ADJ_AT the)
+        (HIE
+          (AJP_JJT cheapest)
+          (HIF
+            (NOUN_NN ticket)
+            (PP_NP
+              (PREP_IN from)
+              (KLK
+                (NOUN_NP memphis)
+                (PP_NPS (PREP_IN to) (NOUN_NPS miami)))))))
+      (pt_char_per .))))
+
+
+======================================================================
+Sentence: i 'd like to leave before eight o'clock at night .
+Number of parses: 5
+======================================================================
+
+Parse 1:
+(SIGMA
+  (NP_PPSS i)
+  (DLX
+    (VERB_MD 'd)
+    (DLY
+      (VERB_VB like)
+      (DLZ
+        (PP_NN
+          (PREP_IN to)
+          (KIN
+            (NOUN_NN leave)
+            (PP_CD
+              (PREP_IN before)
+              (KHJ
+                (NOUN_CD (eight eight) (o___clock o'clock))
+                (PP_JJ (PREP_IN at) (ADJ_JJ night))))))
+        (pt_char_per .)))))
+
+Parse 2:
+(SIGMA
+  (NP_PPSS i)
+  (DLL
+    (VERB_MD 'd)
+    (DLM
+      (VERB_VB like)
+      (DLN
+        (INFCL_VB
+          (to to)
+          (JLN
+            (VERB_VB leave)
+            (PP_CD
+              (PREP_IN before)
+              (KHK
+                (NOUN_CD (eight eight) (o___clock o'clock))
+                (PP_NN (PREP_IN at) (NOUN_NN night))))))
+        (pt_char_per .)))))
+
+Parse 3:
+(SIGMA
+  (NP_PPSS i)
+  (DLL
+    (VERB_MD 'd)
+    (DLM
+      (VERB_VB like)
+      (DLN
+        (INFCL_VB
+          (to to)
+          (JLN
+            (VERB_VB leave)
+            (PP_CD
+              (PREP_IN before)
+              (KHJ
+                (NOUN_CD (eight eight) (o___clock o'clock))
+                (PP_JJ (PREP_IN at) (ADJ_JJ night))))))
+        (pt_char_per .)))))
+
+Parse 4:
+(SIGMA
+  (NP_PPSS i)
+  (DLX
+    (VERB_MD 'd)
+    (DLY
+      (VERB_VB like)
+      (DLZ
+        (PP_NN
+          (PREP_IN to)
+          (KIY
+            (NP_NN
+              (NOUN_NN leave)
+              (PP_CD
+                (PREP_IN before)
+                (KHO
+                  (NOUN_CD (eight eight) (o___clock o'clock))
+                  (PREP_IN at))))
+            (NOUN_NN night)))
+        (pt_char_per .)))))
+
+Parse 5:
+(SIGMA
+  (NP_PPSS i)
+  (DLX
+    (VERB_MD 'd)
+    (DLY
+      (VERB_VB like)
+      (DLZ
+        (PP_NN
+          (PREP_IN to)
+          (KIN
+            (NOUN_NN leave)
+            (PP_CD
+              (PREP_IN before)
+              (KHK
+                (NOUN_CD (eight eight) (o___clock o'clock))
+                (PP_NN (PREP_IN at) (NOUN_NN night))))))
+        (pt_char_per .)))))
+
+
+======================================================================
+Sentence: can you tell me about the flights from saint petersburg to toronto again .
+Number of parses: 3
+======================================================================
+
+Parse 1:
+(SIGMA
+  (VERB_MD can)
+  (BJG
+    (NP_PPSS you)
+    (BJH
+      (VERB_VB tell)
+      (BJI
+        (NP_PPO me)
+        (BJJ
+          (NP_NNS
+            (AVP_RB (AVP_RB about) (ADV_RB the))
+            (KAS
+              (NOUN_NNS flights)
+              (PP_NP
+                (PREP_IN from)
+                (ITY
+                  (NP_NP saint)
+                  (ITZ
+                    (NOUN_NP petersburg)
+                    (PP_NP
+                      (PREP_IN to)
+                      (KKY (NOUN_NP toronto) (AVP_RB again))))))))
+          (pt_char_per .))))))
+
+Parse 2:
+(SIGMA
+  (VERB_MD can)
+  (BJG
+    (NP_PPSS you)
+    (BJH
+      (VERB_VB tell)
+      (BJI
+        (NP_PPO me)
+        (BJJ
+          (NP_NNS
+            (AVP_RB (AVP_RB about) (ADV_RB the))
+            (KAS
+              (NOUN_NNS flights)
+              (PP_NP
+                (PREP_IN from)
+                (KLD
+                  (NOUN_NP saint)
+                  (NAPPOS_NP
+                    (NOUN_NP petersburg)
+                    (PP_NP
+                      (PREP_IN to)
+                      (KKY (NOUN_NP toronto) (AVP_RB again))))))))
+          (pt_char_per .))))))
+
+Parse 3:
+(SIGMA
+  (VERB_MD can)
+  (BJG
+    (NP_PPSS you)
+    (BJH
+      (VERB_VB tell)
+      (BJI
+        (NP_PPO me)
+        (BJJ
+          (NP_NNS
+            (AVP_RB (AVP_RB about) (ADV_RB the))
+            (KAS
+              (NOUN_NNS flights)
+              (PP_NP
+                (PREP_IN from)
+                (KLJ
+                  (NOUN_NP (saint saint) (petersburg petersburg))
+                  (PP_NP
+                    (PREP_IN to)
+                    (KKY (NOUN_NP toronto) (AVP_RB again)))))))
+          (pt_char_per .))))))
+
